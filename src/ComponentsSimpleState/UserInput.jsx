@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import ItemStatus from './ItemStatus';
 
 
 
-export default  function UserInput({items,setItems}){
-    
+export default function UserInput({ items, setItems}) {
+    console.log('UserInput')
     const [userInput, setUserInput] = useState("");
-    
+
     const inputChange = (event) => setUserInput(event.target.value);
-    
+
     const buttonClicked = () => {
         if (userInput !== "") {
             let uid = uuidv4()
@@ -20,6 +21,7 @@ export default  function UserInput({items,setItems}){
 
 
     return (
+        <>
             <form
                 className="mt-20 mb-44 text-center"
                 onSubmit={(event) => event.preventDefault()}
@@ -40,6 +42,8 @@ export default  function UserInput({items,setItems}){
                     Add
                 </button>
             </form>
+            <ItemStatus items={items}/>
+        </>
     )
 
 }

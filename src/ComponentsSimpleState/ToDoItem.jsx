@@ -1,21 +1,23 @@
 import { useState } from "react";
 
-export default function ToDoItem({ item, items, setItems }) {
-    const [taskState, setTaskState] = useState("undone")
+export default function ToDoItem({ item, items, setItems, taskRender, setTaskRender }) {
+    console.log('ToDoItem')
 
     const checkBoxClicked = (event) => {
         if (event.target.checked) {
+            console.log('clicked')
             item.done = true
-            return setTaskState("done")
+            return setTaskRender(!taskRender)
         }
         item.done = false
-        return setTaskState("undone")
+        console.log('unclicked')
+        return setTaskRender(!taskRender)
     };
 
     const deleteTask = () => {
         let newItems = [...items]
         let index = newItems.indexOf(item)
-        newItems.splice(index,1)
+        newItems.splice(index, 1)
         setItems(newItems)
     };
     return (
