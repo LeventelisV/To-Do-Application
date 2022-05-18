@@ -1,7 +1,7 @@
 import ToDoItem from "./ToDoItem"
 
 export default function ToDoList({ items, setItems, taskRender, setTaskRender }) {
-    console.log('ToDoList')
+    // console.log('ToDoList')
     return (
         <ul>
             {items.map((item) => {

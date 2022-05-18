@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ToDoItem({ item, items, setItems, taskRender, setTaskRender }) {
-    console.log('ToDoItem')
+    // console.log('ToDoItem')
 
     const checkBoxClicked = (event) => {
         if (event.target.checked) {

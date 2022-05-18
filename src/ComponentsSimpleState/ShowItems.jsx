@@ -1,0 +1,34 @@
+import { useState } from "react";
+
+export default function ShowItems({ items, setItems }) {
+    const [excludedItems,setExcludedItems] = useState([])
+
+    const checkboxClicked = (event) => {
+        let doneItems = []
+        let undoneItems = []
+        if(event.target.checked){
+            items.map((item)=>{
+                if(item.done){
+                    doneItems.push(item)
+                }
+                else{
+                    undoneItems.push(item)
+                }
+            })
+            setItems(undoneItems)
+            setExcludedItems(doneItems)
+        }
+        else {
+            setItems([...items,...excludedItems])
+        }
+    }
+
+    return (
+        <>
+            <div className="mt-6">
+                <label>Show Undone </label>
+                <input type="checkbox" onClick={checkboxClicked} />
+            </div>
+        </>
+    );
+}
