@@ -25,7 +25,7 @@ export default function ToDoItem({ item, items, setItems, taskRender, setTaskRen
             key={item.id}
             className="flex items-center justify-center space-x-3">
             <div className={item.done ? 'line-through' : ''}>{item.name}</div>
-            <input type="checkbox" id={item.id} onChange={checkBoxClicked} />
+            <input type="checkbox" id={item.id} onChange={checkBoxClicked} checked={item.done}/>
             <button onClick={deleteTask}>delete</button>
         </li>
     )
