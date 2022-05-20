@@ -13,7 +13,7 @@ export default function UserInput({ items, setItems}) {
         if (userInput !== "") {
             let uid = uuidv4()
             let item = { id: uid, name: userInput, done: false }
-            setItems(items.concat(item));
+            setItems([item,...items]);
             setUserInput("");
         }
     };
