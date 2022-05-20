@@ -5,7 +5,6 @@ import ItemStatus from './ItemStatus';
 
 
 export default function UserInput({ items, setItems}) {
-    // console.log('UserInput')
     const [userInput, setUserInput] = useState("");
 
     const inputChange = (event) => setUserInput(event.target.value);

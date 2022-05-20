@@ -1,16 +1,14 @@
-import { useState } from "react";
+import { TrashIcon } from '@heroicons/react/outline'
 
 export default function ToDoItem({ item, items, setItems, taskRender, setTaskRender }) {
-    // console.log('ToDoItem')
+    const itemTextClasses = 'text-left break-all text-lg'
 
     const checkBoxClicked = (event) => {
         if (event.target.checked) {
-            console.log('clicked')
             item.done = true
             return setTaskRender(!taskRender)
         }
         item.done = false
-        console.log('unclicked')
         return setTaskRender(!taskRender)
     };
 
@@ -21,12 +19,13 @@ export default function ToDoItem({ item, items, setItems, taskRender, setTaskRen
         setItems(newItems)
     };
     return (
-        <li
-            key={item.id}
-            className="flex items-center justify-center space-x-3">
-            <div className={item.done ? 'line-through' : ''}>{item.name}</div>
-            <input type="checkbox" id={item.id} onChange={checkBoxClicked} checked={item.done}/>
-            <button onClick={deleteTask}>delete</button>
-        </li>
+        <tr className="h-12">
+            {console.log(TrashIcon)}
+            <td className={item.done ? 'line-through ' + itemTextClasses : itemTextClasses}>{item.name}</td>
+            <td><input className="w-4 h-4" type="checkbox" id={item.id} onChange={checkBoxClicked} checked={item.done} /></td>
+            <td className="text-right mr-2">
+                <button onClick={deleteTask}><TrashIcon className="w-6 h-6" /></button>
+            </td>
+        </tr>
     )
 }
