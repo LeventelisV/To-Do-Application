@@ -27,7 +27,7 @@ export default function ShowItems({ items, setItems }) {
         <>
             <div className="mt-6">
                 <label htmlFor="show-undone">Show Undone </label>
-                <input id="show-undone" type="checkbox" onClick={checkboxClicked} />
+                <input id="show-undone" data-testid="show-undone" type="checkbox" onClick={checkboxClicked} />
             </div>
         </>
     );
