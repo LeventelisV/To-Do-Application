@@ -20,7 +20,6 @@ export default function ToDoItem({ item, items, setItems, taskRender, setTaskRen
     };
     return (
         <tr className="h-12">
-            {console.log(TrashIcon)}
             <td className={item.done ? 'line-through ' + itemTextClasses : itemTextClasses}>{item.name}</td>
             <td><input className="w-4 h-4" type="checkbox" id={item.id} onChange={checkBoxClicked} checked={item.done} /></td>
             <td className="text-right mr-2">
