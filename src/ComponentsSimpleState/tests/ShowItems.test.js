@@ -2,6 +2,9 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import ShowItems from "../ShowItems";
+// import mockItems from "../../mock/items.js"
+// import items from "../../mock/items.js";
+
 
 describe("ShowItems", () => {
   test("should load show undone label", () => {

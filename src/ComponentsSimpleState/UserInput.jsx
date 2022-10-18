@@ -25,13 +25,14 @@ export default function UserInput({ items, setItems}) {
                 className="mt-20 mb-44 text-center"
                 onSubmit={(event) => event.preventDefault()}
             >
-                <label htmlFor="toDoItem">Add toDo: </label>
+                <label htmlFor="toDoItem">Add toDo:</label>
                 <input
                     className="border border-black rounded"
                     onChange={inputChange}
                     value={userInput}
                     type="text"
                     id="toDoItem"
+                    aria-label="user-input"
                     name="toDoItem"
                 />
                 <button

@@ -17,15 +17,21 @@ export default function ShowItems({ items, setItems }) {
             })
             setItems(undoneItems)
             setExcludedItems(doneItems)
+            
         }
         else {
             setItems([...items,...excludedItems])
         }
+
     }
 
     return (
         <>
             <div className="mt-6">
+                {/* {items && items.map((item) =>
+                    <article >lala</article>
+
+                )} */}
                 <label htmlFor="show-undone">Show Undone </label>
                 <input id="show-undone" data-testid="show-undone" type="checkbox" onClick={checkboxClicked} />
             </div>
