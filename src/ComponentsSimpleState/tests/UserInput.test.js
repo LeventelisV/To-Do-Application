@@ -28,4 +28,11 @@ describe("UserInput", () => {
     await userEvent.type(inputElement,"test")
     expect(inputElement.value).toBe("test")
   });
+  test("should be the input empty after the button is clicked",async () => {
+    const inputElement = screen.getByLabelText("user-input")
+    const buttonElement = screen.getByRole("button")
+    await userEvent.type(inputElement,"test")
+    await userEvent.click(buttonElement)
+    expect(inputElement.value).toBe("")
+  });
 });
