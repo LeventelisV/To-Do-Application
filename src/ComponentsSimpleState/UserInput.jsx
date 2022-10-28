@@ -42,7 +42,6 @@ export default function UserInput({ items, setItems}) {
                     Add
                 </button>
             </form>
-            <ItemStatus items={items}/>
         </>
     )
 
